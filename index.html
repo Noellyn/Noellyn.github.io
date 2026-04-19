@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noellyn Nakyembe — Business & Systems Analyst</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 80px 0 72px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 10% 60%, rgba(29,78,216,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 20%, rgba(234,88,12,0.08) 0%, transparent 45%);
+}
+.hero-inner {
+  position: relative;
+  max-width: 900px; margin: 0 auto; padding: 0 48px;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 40px; align-items: center;
+}
+.hero-role {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--blue-mid); margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(36px, 6vw, 54px);
+  font-weight: 400; color: white;
+  line-height: 1.1; margin-bottom: 20px;
+}
+.hero h1 em { font-style: italic; color: var(--blue-mid); }
+.hero-intro {
+  font-size: 15px; color: rgba(255,255,255,0.55);
+  line-height: 1.8; max-width: 520px;
+  font-weight: 300; margin-bottom: 32px;
+}
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 22px; border-radius: 8px;
+  font-size: 13px; font-weight: 500;
+  text-decoration: none; transition: all 0.2s;
+  font-family: var(--sans);
+}
+.btn-primary {
+  background: var(--blue); color: white; border: 1px solid var(--blue);
+}
+.btn-primary:hover { background: #1e40af; }
+.btn-outline {
+  background: transparent; color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.5); color: white; }
+
+.hero-badge {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  min-width: 160px;
+}
+.hero-badge-num {
+  font-family: var(--serif);
+  font-size: 36px; color: white; display: block;
+}
+.hero-badge-label {
+  font-size: 11px; color: rgba(255,255,255,0.4);
+  letter-spacing: 0.05em; margin-top: 4px; display: block;
+}
+
+/* ── WHAT I DO ── */
+.what-i-do { padding: 72px 0; border-bottom: 1px solid var(--border); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+}
+.service-item {
+  background: white;
+  padding: 32px 28px;
+  transition: background 0.2s;
+}
+.service-item:hover { background: var(--blue-light); }
+.service-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  background: var(--navy); display: flex;
+  align-items: center; justify-content: center;
+  font-size: 18px; margin-bottom: 16px;
+}
+.service-title {
+  font-size: 15px; font-weight: 500;
+  color: var(--navy); margin-bottom: 8px;
+}
+.service-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+/* ── PROJECTS PREVIEW ── */
+.projects-preview { padding: 72px 0; border-bottom: 1px solid var(--border); }
+.project-cards-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.project-preview-card {
+  border: 1px solid var(--border); border-radius: 12px;
+  overflow: hidden; text-decoration: none;
+  background: white; transition: all 0.2s;
+  display: flex; flex-direction: column;
+}
+.project-preview-card:hover {
+  border-color: var(--blue-mid);
+  transform: translateY(-3px);
+}
+.ppc-header {
+  padding: 20px; height: 100px;
+  display: flex; align-items: flex-end;
+}
+.ppc-header-navy  { background: var(--navy); }
+.ppc-header-green { background: #052e16; }
+.ppc-header-blue  { background: #172554; }
+.ppc-num {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; display: block; margin-bottom: 4px;
+}
+.ppc-num-orange { color: var(--orange); }
+.ppc-num-green  { color: #4ade80; }
+.ppc-num-blue   { color: #93c5fd; }
+.ppc-title {
+  font-family: var(--serif); font-size: 17px;
+  color: white; font-weight: 400; line-height: 1.2;
+}
+.ppc-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.ppc-desc {
+  font-size: 12px; color: var(--text-muted);
+  line-height: 1.7; flex: 1; margin-bottom: 16px;
+}
+.ppc-link {
+  font-size: 12px; font-weight: 500; color: var(--blue);
+  display: flex; align-items: center; gap: 4px;
+}
+
+/* ── STATUS BAR ── */
+.status-bar {
+  padding: 40px 0;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.status-inner {
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 16px;
+}
+.status-left { display: flex; align-items: center; gap: 12px; }
+.status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.status-text { font-size: 14px; color: var(--text); font-weight: 400; }
+.status-location { font-size: 13px; color: var(--text-muted); }
+
+@media (max-width: 680px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-badge { display: none; }
+  .hero-inner { padding: 0 20px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .project-cards-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">Noellyn <span>Nakyembe</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="fade-up">
+      <div class="hero-role">Business &amp; Systems Analyst</div>
+      <h1>Designing <em>Data-Driven</em> Solutions</h1>
+      <p class="hero-intro">
+        Information Systems postgraduate specialising in database systems, system modelling, and digital platform development. I bridge business needs and technology.
+      </p>
+      <div class="hero-cta">
+        <a href="projects.html" class="btn btn-primary">View Projects →</a>
+        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-badge fade-up-2">
+      <span class="hero-badge-num">2</span>
+      <span class="hero-badge-label">Projects Built</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATUS BAR -->
+<div class="status-bar">
+  <div class="container">
+    <div class="status-inner">
+      <div class="status-left">
+        <div class="status-dot"></div>
+        <span class="status-text">Open to internship and entry-level opportunities</span>
+      </div>
+      <span class="status-location">📍 Kampala, Uganda · Available May 2026</span>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT I DO -->
+<section class="what-i-do">
+  <div class="container">
+    <div class="section-label">What I Do</div>
+    <div class="section-title">Three areas of <em>practice</em></div>
+    <div class="services-grid">
+      <div class="service-item">
+        <div class="service-icon">⚙️</div>
+        <div class="service-title">Systems Analysis &amp; Design</div>
+        <p class="service-desc">Requirements gathering, ER modelling, process mapping, and translating business problems into structured technical solutions.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">🗄️</div>
+        <div class="service-title">Database &amp; Data Solutions</div>
+        <p class="service-desc">Relational database design normalised to 3NF, SQL querying, role-based access control, and data integrity implementation.</p>
+      </div>
+      <div class="service-item">
+        <div class="service-icon">📊</div>
+        <div class="service-title">Business &amp; Process Optimisation</div>
+        <p class="service-desc">Identifying inefficiencies, modelling processes, and designing platforms that improve how organisations operate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS PREVIEW -->
+<section class="projects-preview">
+  <div class="container">
+    <div class="section-label">Featured Projects</div>
+    <div class="section-title">Work I have <em>built</em></div>
+    <div class="project-cards-grid">
+
+      <a href="project-microfinance.html" class="project-preview-card fade-up">
+        <div class="ppc-header ppc-header-green">
+          <div>
+            <span class="ppc-num ppc-num-green">Project 01</span>
+            <div class="ppc-title">Microfinance Database System</div>
+          </div>
+        </div>
+        <div class="ppc-body">
+          <div class="tag-row">
+            <span class="tag tag-green">MySQL</span>
+            <span class="tag tag-green">3NF</span>
+            <span class="tag tag-green">RBAC</span>
+          </div>
+          <p class="ppc-desc">Centralised relational database for a Bank of Uganda-regulated MDI — replacing Excel across 3 offices, 34 staff.</p>
+          <span class="ppc-link">View project →</span>
+        </div>
+      </a>
+
+      <a href="project-hostelhub.html" class="project-preview-card fade-up-2">
+        <div class="ppc-header ppc-header-navy">
+          <div>
+            <span class="ppc-num ppc-num-orange">Project 02</span>
+            <div class="ppc-title">HostelHub Essentials</div>
+          </div>
+        </div>
+        <div class="ppc-body">
+          <div class="tag-row">
+            <span class="tag tag-orange">WordPress</span>
+            <span class="tag tag-orange">PHP/AJAX</span>
+            <span class="tag tag-orange">WooCommerce</span>
+          </div>
+          <p class="ppc-desc">Student-focused B2C e-commerce platform built for Kampala university hostel residents — 32 products, 9 categories.</p>
+          <span class="ppc-link">View project →</span>
+        </div>
+      </a>
+
+      <a href="project-modeling.html" class="project-preview-card fade-up-3">
+        <div class="ppc-header ppc-header-blue">
+          <div>
+            <span class="ppc-num ppc-num-blue">Project 03</span>
+            <div class="ppc-title">System Dynamics Modelling</div>
+          </div>
+        </div>
+        <div class="ppc-body">
+          <div class="tag-row">
+            <span class="tag tag-blue">STELLA</span>
+            <span class="tag tag-blue">CLDs</span>
+            <span class="tag tag-blue">Systems Thinking</span>
+          </div>
+          <p class="ppc-desc">Causal loop diagrams and system dynamics modelling to analyse feedback loops and support decision-making.</p>
+          <span class="ppc-link">View project →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-name">Noellyn Nakyembe</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

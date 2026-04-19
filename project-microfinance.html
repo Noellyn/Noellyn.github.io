@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microfinance Database System — Noellyn Nakyembe</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.project-hero {
+  background: #052e16; padding: 64px 0 56px;
+  border-bottom: 1px solid #14532d;
+}
+.breadcrumb {
+  font-size: 12px; color: rgba(255,255,255,0.35);
+  margin-bottom: 20px; display: flex; gap: 8px; align-items: center;
+}
+.breadcrumb a { color: rgba(255,255,255,0.35); text-decoration: none; }
+.breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+.project-hero h1 {
+  font-family: var(--serif); font-size: clamp(28px,5vw,44px);
+  font-weight: 400; color: white; line-height: 1.15; margin-bottom: 12px;
+}
+.project-hero h1 em { font-style: italic; color: #4ade80; }
+.project-hero-sub { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 300; }
+.project-meta {
+  display: flex; gap: 24px; flex-wrap: wrap;
+  margin-top: 32px; padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.meta-item { }
+.meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+.meta-value { font-size: 13px; color: rgba(255,255,255,0.7); }
+
+.project-body { padding: 64px 0; }
+.content-grid {
+  display: grid; grid-template-columns: 1fr 280px;
+  gap: 56px; align-items: start;
+}
+.content-main { }
+.content-sidebar { position: sticky; top: 72px; }
+
+.prose-section { margin-bottom: 48px; }
+.prose-section h2 {
+  font-family: var(--serif); font-size: 22px; font-weight: 400;
+  color: var(--navy); margin-bottom: 16px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+.prose-section p {
+  font-size: 14px; color: var(--text-muted);
+  line-height: 1.85; margin-bottom: 12px;
+}
+.prose-section p strong { color: var(--text); font-weight: 500; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.mini-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 18px;
+}
+.mini-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
+.mini-card ul { list-style: none; }
+.mini-card ul li {
+  font-size: 13px; color: var(--text-muted);
+  padding: 4px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.mini-card ul li:last-child { border-bottom: none; }
+.mini-card ul li::before { content: '–'; color: var(--text-light); font-size: 11px; }
+
+.schema-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.schema-table th {
+  text-align: left; padding: 10px 14px;
+  background: var(--navy); color: white;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+}
+.schema-table th:first-child { border-radius: 8px 0 0 0; }
+.schema-table th:last-child { border-radius: 0 8px 0 0; }
+.schema-table td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--text-muted); vertical-align: top;
+}
+.schema-table tr:hover td { background: var(--surface); }
+.table-name { font-family: var(--mono); font-size: 12px; color: var(--green); font-weight: 500; }
+.fk-badge {
+  font-size: 10px; background: var(--blue-light); color: var(--blue);
+  border: 1px solid var(--blue-mid); border-radius: 4px; padding: 1px 6px;
+  font-family: var(--mono);
+}
+
+.outcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.outcome-item {
+  background: var(--green-light); border: 1px solid var(--green-mid);
+  border-radius: 10px; padding: 16px 18px;
+}
+.outcome-item .o-label { font-size: 11px; font-weight: 600; color: var(--green); letter-spacing: 0.06em; margin-bottom: 4px; }
+.outcome-item .o-text { font-size: 13px; color: #14532d; }
+
+.sidebar-card {
+  background: white; border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px; margin-bottom: 16px;
+}
+.sidebar-card-title { font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--text-light); margin-bottom: 14px; }
+.sidebar-card ul { list-style: none; }
+.sidebar-card ul li {
+  font-size: 13px; color: var(--text-muted);
+  padding: 5px 0; display: flex; align-items: center; gap: 8px;
+}
+.sidebar-card ul li::before { content: '·'; color: var(--green); font-size: 18px; line-height: 0; }
+
+@media (max-width: 720px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .content-sidebar { position: static; }
+  .two-col, .outcome-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">Noellyn <span>Nakyembe</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="project-hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="projects.html">Projects</a> › Microfinance Database System
+    </div>
+    <h1>Microfinance <em>Database System</em></h1>
+    <div class="project-hero-sub">ABC Microfinance Uganda Ltd — Centralised relational database, Bank of Uganda compliant</div>
+    <div class="project-meta">
+      <div class="meta-item"><div class="meta-label">Stack</div><div class="meta-value">MySQL · PHP · Apache</div></div>
+      <div class="meta-item"><div class="meta-label">Type</div><div class="meta-value">Database Design &amp; Implementation</div></div>
+      <div class="meta-item"><div class="meta-label">Year</div><div class="meta-value">2026</div></div>
+      <div class="meta-item"><div class="meta-label">Scope</div><div class="meta-value">3 offices · 34 staff · 12,000+ clients</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="project-body">
+  <div class="container">
+    <div class="content-grid">
+
+      <main class="content-main">
+
+        <!-- OVERVIEW -->
+        <div class="prose-section">
+          <h2>Overview</h2>
+          <p>ABC Microfinance Uganda Ltd is a Tier 3 Microfinance Deposit-taking Institution licensed by the Bank of Uganda, serving over 12,000 clients across offices in Kampala, Jinja, and Mbarara. This project designed and implemented a centralised relational database system to replace their fragmented Excel-based records.</p>
+          <div class="tag-row" style="margin-top:16px;">
+            <span class="tag tag-green">MySQL 8.0</span>
+            <span class="tag tag-green">PHP / Apache</span>
+            <span class="tag tag-green">3NF Normalization</span>
+            <span class="tag tag-green">Role-Based Access Control</span>
+            <span class="tag tag-green">CIA Triad</span>
+            <span class="tag tag-green">Bank of Uganda Compliant</span>
+          </div>
+        </div>
+
+        <!-- PROBLEM -->
+        <div class="prose-section">
+          <h2>Problem</h2>
+          <p>The organisation managed financial records for 12,000+ clients using <strong>Microsoft Excel spreadsheets and paper forms</strong> with no shared database or network connection between branches. Staff transferred data via USB drives and WhatsApp.</p>
+          <div class="two-col" style="margin-top:16px;">
+            <div class="mini-card">
+              <div class="mini-card-label">Data Issues</div>
+              <ul>
+                <li>Duplicate client records across branches</li>
+                <li>Permanent data loss risk from USB failure</li>
+                <li>No real-time consolidated reporting</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-label">Operational Issues</div>
+              <ul>
+                <li>Loan approvals delayed by days</li>
+                <li>Zero access controls on records</li>
+                <li>Non-compliant with Bank of Uganda audit requirements</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOLUTION -->
+        <div class="prose-section">
+          <h2>Solution</h2>
+          <p>A centralised MySQL database normalised to <strong>Third Normal Form (3NF)</strong>, hosted at the Kampala head office and accessible to all 34 staff across three branches through a secure WAN connection. A PHP web application provides full CRUD operations without requiring SQL knowledge.</p>
+        </div>
+
+        <!-- WHAT I DID -->
+        <div class="prose-section">
+          <h2>What I Did</h2>
+          <div class="two-col">
+            <div class="mini-card">
+              <div class="mini-card-label">Database Design</div>
+              <ul>
+                <li>Requirements analysis with 6 stakeholder roles</li>
+                <li>Entity-Relationship diagram (6 entities)</li>
+                <li>Normalization from flat Excel to 3NF</li>
+                <li>Primary keys, foreign keys, CHECK constraints</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-label">Security</div>
+              <ul>
+                <li>4 role-based user accounts (Teller, Loan Officer, Branch Manager, IT Admin)</li>
+                <li>Segregation of duties — loan approval and disbursement by different roles</li>
+                <li>Soft deletion for 7-year audit compliance</li>
+              </ul>
+            </div>
+          </div>
+          <div class="two-col" style="margin-top:16px;">
+            <div class="mini-card">
+              <div class="mini-card-label">SQL Development</div>
+              <ul>
+                <li>Multi-table JOINs (4 tables, aliased)</li>
+                <li>Aggregates with CASE WHEN and GROUP BY</li>
+                <li>Subqueries (NOT IN, scalar)</li>
+                <li>4 views for daily reporting</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-label">Application</div>
+              <ul>
+                <li>Three-tier PHP/Apache web application</li>
+                <li>6 CRUD screens for all staff roles</li>
+                <li>Dashboard with KPI cards and charts</li>
+                <li>Daily automated backup strategy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- SCHEMA -->
+        <div class="prose-section">
+          <h2>System Design — Database Schema</h2>
+          <div class="callout callout-gray" style="margin-bottom:20px;">
+            <span class="callout-icon">ℹ️</span>
+            Six tables in parent-to-child dependency order. All normalised to 3NF. Soft delete columns on Member table for regulatory compliance.
+          </div>
+          <table class="schema-table">
+            <thead>
+              <tr><th>Table</th><th>Primary Key</th><th>Foreign Keys</th><th>Purpose</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="table-name">Branch</td><td>BranchID</td><td>None</td><td>3 offices: Kampala, Jinja, Mbarara</td></tr>
+              <tr><td class="table-name">Staff</td><td>StaffID</td><td><span class="fk-badge">BranchID</span> <span class="fk-badge">ManagerID→Staff</span></td><td>34 staff; recursive management hierarchy</td></tr>
+              <tr><td class="table-name">Member</td><td>MemberID</td><td><span class="fk-badge">BranchID</span> <span class="fk-badge">DeletedBy→Staff</span></td><td>12,000+ clients; soft delete support</td></tr>
+              <tr><td class="table-name">Account</td><td>AccountID</td><td><span class="fk-badge">MemberID</span></td><td>Savings and fixed deposit accounts</td></tr>
+              <tr><td class="table-name">Loan</td><td>LoanID</td><td><span class="fk-badge">MemberID</span> <span class="fk-badge">ApprovedBy</span> <span class="fk-badge">DisbursedBy</span></td><td>Full loan lifecycle management</td></tr>
+              <tr><td class="table-name">Transaction_Log</td><td>TransactionID</td><td><span class="fk-badge">AccountID</span> <span class="fk-badge">PerformedBy</span></td><td>Audit trail for all transactions</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- KEY SQL -->
+        <div class="prose-section">
+          <h2>Key SQL — Active Loan Portfolio Query</h2>
+          <div class="code-block">
+            <pre><span class="sql-cm">-- Four-table JOIN: active loans with member, branch, approving officer and teller</span>
+<span class="sql-kw">SELECT</span> m.FullName, b.BranchName,
+       l.LoanAmount,
+       l.LoanAmount - l.AmountRepaid <span class="sql-kw">AS</span> Outstanding,
+       s1.FullName <span class="sql-kw">AS</span> ApprovedBy,
+       s2.FullName <span class="sql-kw">AS</span> DisbursedBy
+<span class="sql-kw">FROM</span>  Loan l
+<span class="sql-kw">JOIN</span>  Member m  <span class="sql-kw">ON</span> l.MemberID   = m.MemberID
+<span class="sql-kw">JOIN</span>  Branch b  <span class="sql-kw">ON</span> m.BranchID   = b.BranchID
+<span class="sql-kw">JOIN</span>  Staff  s1 <span class="sql-kw">ON</span> l.ApprovedBy  = s1.StaffID
+<span class="sql-kw">JOIN</span>  Staff  s2 <span class="sql-kw">ON</span> l.DisbursedBy = s2.StaffID
+<span class="sql-kw">WHERE</span> l.Status = <span class="sql-str">'Active'</span>;</pre>
+          </div>
+        </div>
+
+        <!-- OUTCOME -->
+        <div class="prose-section">
+          <h2>Outcome</h2>
+          <div class="outcome-grid">
+            <div class="outcome-item">
+              <div class="o-label">Data Integrity</div>
+              <div class="o-text">3NF eliminates duplication — one source of truth across all three branches</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Processing Speed</div>
+              <div class="o-text">Loan approvals no longer require physical document transfer between offices</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Security</div>
+              <div class="o-text">Role-based access replaces open Excel files accessible to all staff</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Compliance</div>
+              <div class="o-text">Soft deletion, audit trail, and 7-year backup retention meet Bank of Uganda requirements</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-green">
+          <span class="callout-icon">🔗</span>
+          GitHub repository with all SQL scripts and documentation — coming soon at github.com/Noellyn/abc-microfinance-db
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="content-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Tech Stack</div>
+          <ul>
+            <li>MySQL 8.0</li>
+            <li>PHP / Apache</li>
+            <li>HTML / CSS</li>
+            <li>MySQL Workbench</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Skills Demonstrated</div>
+          <ul>
+            <li>ER Modelling</li>
+            <li>3NF Normalization</li>
+            <li>SQL (JOINs, Views, Subqueries)</li>
+            <li>Role-Based Access Control</li>
+            <li>CIA Triad Security</li>
+            <li>Regulatory Compliance</li>
+            <li>PHP Application Development</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Project Type</div>
+          <ul>
+            <li>Database Design</li>
+            <li>Systems Analysis</li>
+            <li>Application Development</li>
+          </ul>
+        </div>
+        <a href="project-hostelhub.html" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:8px;">Next Project →</a>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-name">Noellyn Nakyembe</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Noellyn Nakyembe</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 56px 0; }
+.page-hero h1 { font-family: var(--serif); font-size: 40px; font-weight: 400; color: var(--navy); }
+.page-hero h1 em { font-style: italic; color: var(--blue); }
+.page-hero p { font-size: 15px; color: var(--text-muted); margin-top: 12px; }
+.projects-list { padding: 56px 0; }
+.project-row { display: grid; grid-template-columns: 200px 1fr; gap: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 20px; text-decoration: none; background: white; transition: all 0.2s; }
+.project-row:hover { border-color: var(--blue-mid); transform: translateY(-2px); }
+.project-row-left { padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between; }
+.pr-left-navy  { background: var(--navy); }
+.pr-left-green { background: #052e16; }
+.pr-left-blue  { background: #172554; }
+.pr-num { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
+.pr-num-orange { color: var(--orange); }
+.pr-num-green  { color: #4ade80; }
+.pr-num-blue   { color: #93c5fd; }
+.pr-title { font-family: var(--serif); font-size: 19px; font-weight: 400; color: white; line-height: 1.2; margin-top: 8px; }
+.project-row-right { padding: 28px 32px; }
+.pr-tags { margin-bottom: 12px; }
+.pr-desc { font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-bottom: 16px; }
+.pr-link { font-size: 13px; font-weight: 500; color: var(--blue); }
+@media (max-width:680px) { .project-row { grid-template-columns: 1fr; } .project-row-left { flex-direction: row; align-items: center; padding: 16px 20px; } }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">Noellyn <span>Nakyembe</span></a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="projects.html" class="active">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+</nav>
+<div class="page-hero">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h1>Work I have <em>built</em></h1>
+    <p>Three projects covering database design, e-commerce development, and systems modelling.</p>
+  </div>
+</div>
+<section class="projects-list">
+  <div class="container">
+    <a href="project-microfinance.html" class="project-row">
+      <div class="project-row-left pr-left-green">
+        <span class="pr-num pr-num-green">Project 01</span>
+        <div class="pr-title">Microfinance Database System</div>
+      </div>
+      <div class="project-row-right">
+        <div class="pr-tags tag-row"><span class="tag tag-green">MySQL</span><span class="tag tag-green">3NF Normalization</span><span class="tag tag-green">RBAC</span><span class="tag tag-green">PHP</span><span class="tag tag-green">Bank of Uganda Compliant</span></div>
+        <p class="pr-desc">Centralised relational database for ABC Microfinance Uganda Ltd — a Bank of Uganda-regulated Tier 3 MDI serving 12,000+ clients across three offices. Replaced Excel spreadsheets with a 6-table MySQL schema normalised to 3NF, role-based access control for 34 staff, and a PHP web application.</p>
+        <span class="pr-link">View project →</span>
+      </div>
+    </a>
+    <a href="project-hostelhub.html" class="project-row">
+      <div class="project-row-left pr-left-navy">
+        <span class="pr-num pr-num-orange">Project 02</span>
+        <div class="pr-title">HostelHub Essentials</div>
+      </div>
+      <div class="project-row-right">
+        <div class="pr-tags tag-row"><span class="tag tag-orange">WordPress</span><span class="tag tag-orange">WooCommerce</span><span class="tag tag-orange">PHP/AJAX</span><span class="tag tag-orange">Yoast SEO</span><span class="tag tag-orange">UX Design</span></div>
+        <p class="pr-desc">Student-focused B2C e-commerce platform built for university hostel residents in Kampala. 32 curated products across 9 categories, custom PHP AJAX cart controls, mobile-first design for 3G users, and a full business model including revenue forecasting and competitive analysis.</p>
+        <span class="pr-link">View project →</span>
+      </div>
+    </a>
+    <a href="project-modeling.html" class="project-row">
+      <div class="project-row-left pr-left-blue">
+        <span class="pr-num pr-num-blue">Project 03</span>
+        <div class="pr-title">System Dynamics Modelling</div>
+      </div>
+      <div class="project-row-right">
+        <div class="pr-tags tag-row"><span class="tag tag-blue">STELLA</span><span class="tag tag-blue">Causal Loop Diagrams</span><span class="tag tag-blue">Systems Thinking</span></div>
+        <p class="pr-desc">System dynamics modelling using causal loop diagrams to identify feedback loops, analyse system behaviour, and support decision-making. Built in STELLA with explicit attention to reinforcing and balancing loops.</p>
+        <span class="pr-link">View project →</span>
+      </div>
+    </a>
+  </div>
+</section>
+<footer>
+  <span class="footer-name">Noellyn Nakyembe</span>
+  <div class="footer-links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+</footer>
+</body>
+</html>

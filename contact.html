@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Noellyn Nakyembe</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.page-hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 56px 0; }
+.page-hero h1 { font-family: var(--serif); font-size: 40px; font-weight: 400; color: var(--navy); }
+.page-hero h1 em { font-style: italic; color: var(--blue); }
+.contact-section { padding: 64px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+.contact-card {
+  background: white; border: 1px solid var(--border); border-radius: 14px;
+  padding: 28px; display: flex; flex-direction: column; gap: 12px;
+  text-decoration: none; transition: all 0.2s;
+}
+.contact-card:hover { border-color: var(--blue-mid); background: var(--blue-light); }
+.cc-icon { font-size: 28px; }
+.cc-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); }
+.cc-value { font-size: 15px; color: var(--navy); font-weight: 400; }
+.cc-desc { font-size: 12px; color: var(--text-muted); }
+.availability { background: var(--navy); border-radius: 14px; padding: 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.avail-left .avail-title { font-family: var(--serif); font-size: 22px; color: white; margin-bottom: 8px; }
+.avail-left .avail-desc { font-size: 14px; color: rgba(255,255,255,0.5); }
+.avail-badge { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 16px 24px; text-align: center; white-space: nowrap; }
+.avail-badge-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; display: inline-block; margin-right: 8px; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.avail-badge-text { font-size: 13px; color: white; font-weight: 500; }
+.avail-badge-sub { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+@media (max-width:680px) { .contact-grid { grid-template-columns: 1fr; } .availability { flex-direction: column; } }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">Noellyn <span>Nakyembe</span></a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html" class="active">Contact</a></div>
+</nav>
+<div class="page-hero">
+  <div class="container">
+    <div class="section-label">Contact</div>
+    <h1>Get in <em>touch</em></h1>
+    <p style="color:var(--text-muted); margin-top:10px; font-size:15px;">Open to entry-level roles in business analysis, systems analysis, and data-related fields.</p>
+  </div>
+</div>
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <a href="mailto:your@email.com" class="contact-card">
+        <div class="cc-icon">📧</div>
+        <div class="cc-label">Email</div>
+        <div class="cc-value">your@email.com</div>
+        <div class="cc-desc">Best way to reach me. I respond within 24 hours.</div>
+      </a>
+      <a href="tel:+256000000000" class="contact-card">
+        <div class="cc-icon">📞</div>
+        <div class="cc-label">Phone</div>
+        <div class="cc-value">+256 000 000 000</div>
+        <div class="cc-desc">Available during business hours, Kampala time (EAT).</div>
+      </a>
+      <a href="https://linkedin.com/in/your-username" target="_blank" class="contact-card">
+        <div class="cc-icon">💼</div>
+        <div class="cc-label">LinkedIn</div>
+        <div class="cc-value">linkedin.com/in/your-username</div>
+        <div class="cc-desc">Professional profile with education and experience.</div>
+      </a>
+      <a href="https://github.com/Noellyn" target="_blank" class="contact-card">
+        <div class="cc-icon">🐙</div>
+        <div class="cc-label">GitHub</div>
+        <div class="cc-value">github.com/Noellyn</div>
+        <div class="cc-desc">SQL scripts, database documentation, and project code.</div>
+      </a>
+    </div>
+    <div class="availability">
+      <div class="avail-left">
+        <div class="avail-title">Open to opportunities</div>
+        <div class="avail-desc">Business analyst · Systems analyst · IT officer · Data roles<br>Kampala, Uganda · Remote considered</div>
+      </div>
+      <div class="avail-badge">
+        <div><span class="avail-badge-dot"></span><span class="avail-badge-text">Available May 2026</span></div>
+        <div class="avail-badge-sub">📍 Kampala, Uganda</div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <span class="footer-name">Noellyn Nakyembe</span>
+  <div class="footer-links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+</footer>
+</body>
+</html>

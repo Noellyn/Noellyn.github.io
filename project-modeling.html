@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Dynamics Modelling — Noellyn Nakyembe</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.project-hero { background: #172554; padding: 64px 0 56px; border-bottom: 1px solid #1e3a8a; }
+.breadcrumb { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 20px; display: flex; gap: 8px; }
+.breadcrumb a { color: rgba(255,255,255,0.35); text-decoration: none; }
+.breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+.project-hero h1 { font-family: var(--serif); font-size: clamp(28px,5vw,44px); font-weight: 400; color: white; line-height: 1.15; margin-bottom: 12px; }
+.project-hero h1 em { font-style: italic; color: #93c5fd; }
+.project-hero-sub { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 300; }
+.project-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1); }
+.meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+.meta-value { font-size: 13px; color: rgba(255,255,255,0.7); }
+.project-body { padding: 64px 0; }
+.content-grid { display: grid; grid-template-columns: 1fr 280px; gap: 56px; align-items: start; }
+.prose-section { margin-bottom: 48px; }
+.prose-section h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--navy); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.prose-section p { font-size: 14px; color: var(--text-muted); line-height: 1.85; margin-bottom: 12px; }
+.prose-section p strong { color: var(--text); font-weight: 500; }
+.sidebar-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+.sidebar-card-title { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 14px; }
+.sidebar-card ul { list-style: none; }
+.sidebar-card ul li { font-size: 13px; color: var(--text-muted); padding: 5px 0; display: flex; align-items: center; gap: 8px; }
+.sidebar-card ul li::before { content: '·'; color: var(--blue); font-size: 18px; line-height: 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.mini-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+.mini-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
+.mini-card ul { list-style: none; }
+.mini-card ul li { font-size: 13px; color: var(--text-muted); padding: 4px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; }
+.mini-card ul li:last-child { border-bottom: none; }
+.mini-card ul li::before { content: '–'; color: var(--text-light); font-size: 11px; flex-shrink: 0; }
+.outcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.outcome-item { background: var(--blue-light); border: 1px solid var(--blue-mid); border-radius: 10px; padding: 16px 18px; }
+.outcome-item .o-label { font-size: 11px; font-weight: 600; color: var(--blue); letter-spacing: 0.06em; margin-bottom: 4px; }
+.outcome-item .o-text { font-size: 13px; color: #1e3a8a; }
+@media (max-width: 720px) { .content-grid { grid-template-columns: 1fr; } .two-col, .outcome-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">Noellyn <span>Nakyembe</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<div class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="projects.html">Projects</a> › System Dynamics Modelling</div>
+    <h1>System <em>Dynamics Modelling</em></h1>
+    <div class="project-hero-sub">Causal loop diagrams and feedback loop analysis using STELLA</div>
+    <div class="project-meta">
+      <div class="meta-item"><div class="meta-label">Tool</div><div class="meta-value">STELLA · CLDs</div></div>
+      <div class="meta-item"><div class="meta-label">Type</div><div class="meta-value">Systems Thinking &amp; Modelling</div></div>
+      <div class="meta-item"><div class="meta-label">Year</div><div class="meta-value">2026</div></div>
+    </div>
+  </div>
+</div>
+<div class="project-body">
+  <div class="container">
+    <div class="content-grid">
+      <main class="content-main">
+        <div class="prose-section">
+          <h2>Overview</h2>
+          <p>This project applied system dynamics modelling to analyse complex system behaviour using causal loop diagrams (CLDs) built in STELLA. The goal was to identify feedback loops, understand how variables interact over time, and generate insights to support decision-making.</p>
+          <div class="tag-row" style="margin-top:16px;">
+            <span class="tag tag-blue">STELLA</span>
+            <span class="tag tag-blue">Causal Loop Diagrams</span>
+            <span class="tag tag-blue">Systems Thinking</span>
+            <span class="tag tag-blue">Feedback Analysis</span>
+          </div>
+        </div>
+        <div class="prose-section">
+          <h2>What I Did</h2>
+          <div class="two-col">
+            <div class="mini-card">
+              <div class="mini-card-label">Modelling</div>
+              <ul>
+                <li>Identified key system variables</li>
+                <li>Built causal loop diagrams in STELLA</li>
+                <li>Mapped reinforcing and balancing feedback loops</li>
+                <li>Analysed system behaviour over time</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-label">Analysis</div>
+              <ul>
+                <li>Identified leverage points for intervention</li>
+                <li>Traced unintended consequences through feedback</li>
+                <li>Documented system archetypes</li>
+                <li>Generated decision-making recommendations</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="prose-section">
+          <h2>Diagram Placeholder</h2>
+          <div class="screenshot-slot" style="height:260px;">
+            <span style="font-size:24px;">📊</span>
+            <span>Add your STELLA causal loop diagram here</span>
+          </div>
+          <p style="margin-top:12px; font-size:13px;">Export your CLD from STELLA as a PNG or PDF and replace this placeholder.</p>
+        </div>
+        <div class="prose-section">
+          <h2>Outcome</h2>
+          <div class="outcome-grid">
+            <div class="outcome-item">
+              <div class="o-label">Systems Insight</div>
+              <div class="o-text">Identified non-obvious feedback loops that simple linear analysis would have missed</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Decision Support</div>
+              <div class="o-text">Model outputs informed better intervention strategies by revealing high-leverage variables</div>
+            </div>
+          </div>
+        </div>
+        <div class="callout callout-blue">
+          <span class="callout-icon">ℹ️</span>
+          Add more detail about your specific system and findings here — what exactly did you model? What were the key feedback loops you identified?
+        </div>
+      </main>
+      <aside class="content-sidebar" style="position:sticky; top:72px;">
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Tools Used</div>
+          <ul><li>STELLA</li><li>Causal Loop Diagrams</li></ul>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Skills Demonstrated</div>
+          <ul><li>Systems Thinking</li><li>Feedback Loop Analysis</li><li>Complex Problem Modelling</li><li>Decision Support</li></ul>
+        </div>
+        <a href="project-microfinance.html" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:8px; display:flex;">← First Project</a>
+      </aside>
+    </div>
+  </div>
+</div>
+<footer>
+  <span class="footer-name">Noellyn Nakyembe</span>
+  <div class="footer-links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+</footer>
+</body>
+</html>

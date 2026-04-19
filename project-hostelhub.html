@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HostelHub Essentials — Noellyn Nakyembe</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.project-hero { background: var(--navy); padding: 64px 0 56px; border-bottom: 1px solid #1e3a5f; }
+.breadcrumb { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 20px; display: flex; gap: 8px; }
+.breadcrumb a { color: rgba(255,255,255,0.35); text-decoration: none; }
+.breadcrumb a:hover { color: rgba(255,255,255,0.7); }
+.project-hero h1 { font-family: var(--serif); font-size: clamp(28px,5vw,44px); font-weight: 400; color: white; line-height: 1.15; margin-bottom: 12px; }
+.project-hero h1 em { font-style: italic; color: #fb923c; }
+.project-hero-sub { font-size: 14px; color: rgba(255,255,255,0.45); font-weight: 300; }
+.project-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.1); }
+.meta-label { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+.meta-value { font-size: 13px; color: rgba(255,255,255,0.7); }
+
+.project-body { padding: 64px 0; }
+.content-grid { display: grid; grid-template-columns: 1fr 280px; gap: 56px; align-items: start; }
+
+.prose-section { margin-bottom: 48px; }
+.prose-section h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--navy); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.prose-section p { font-size: 14px; color: var(--text-muted); line-height: 1.85; margin-bottom: 12px; }
+.prose-section p strong { color: var(--text); font-weight: 500; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.mini-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+.mini-card-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
+.mini-card ul { list-style: none; }
+.mini-card ul li { font-size: 13px; color: var(--text-muted); padding: 4px 0; border-bottom: 1px solid var(--border); display: flex; gap: 8px; }
+.mini-card ul li:last-child { border-bottom: none; }
+.mini-card ul li::before { content: '–'; color: var(--text-light); font-size: 11px; flex-shrink: 0; margin-top: 2px; }
+
+.feature-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.feature-item { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.feature-item .f-icon { font-size: 20px; margin-bottom: 8px; }
+.feature-item .f-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+.feature-item .f-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+.outcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.outcome-item { background: var(--orange-light); border: 1px solid var(--orange-mid); border-radius: 10px; padding: 16px 18px; }
+.outcome-item .o-label { font-size: 11px; font-weight: 600; color: var(--orange); letter-spacing: 0.06em; margin-bottom: 4px; }
+.outcome-item .o-text { font-size: 13px; color: #7c2d12; }
+
+.sidebar-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+.sidebar-card-title { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 14px; }
+.sidebar-card ul { list-style: none; }
+.sidebar-card ul li { font-size: 13px; color: var(--text-muted); padding: 5px 0; display: flex; align-items: center; gap: 8px; }
+.sidebar-card ul li::before { content: '·'; color: var(--orange); font-size: 18px; line-height: 0; }
+
+@media (max-width: 720px) {
+  .content-grid { grid-template-columns: 1fr; }
+  .content-sidebar { position: static; }
+  .two-col, .feature-grid, .outcome-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">Noellyn <span>Nakyembe</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="project-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="projects.html">Projects</a> › HostelHub Essentials</div>
+    <h1>HostelHub <em>Essentials</em></h1>
+    <div class="project-hero-sub">Student-focused B2C e-commerce platform — designed, built, and deployed end-to-end</div>
+    <div class="project-meta">
+      <div class="meta-item"><div class="meta-label">Stack</div><div class="meta-value">WordPress · WooCommerce · PHP · AJAX</div></div>
+      <div class="meta-item"><div class="meta-label">Type</div><div class="meta-value">E-Commerce Platform Development</div></div>
+      <div class="meta-item"><div class="meta-label">Year</div><div class="meta-value">2026</div></div>
+      <div class="meta-item"><div class="meta-label">Market</div><div class="meta-value">University students, Kampala</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="project-body">
+  <div class="container">
+    <div class="content-grid">
+      <main class="content-main">
+
+        <div class="prose-section">
+          <h2>Overview</h2>
+          <p>HostelHub Essentials is a B2C e-commerce platform built specifically for university students living in hostels and halls of residence in Kampala. The platform offers 32 curated products across 9 categories, all selected for small-space, budget-conscious living.</p>
+          <div class="tag-row" style="margin-top:16px;">
+            <span class="tag tag-orange">WordPress 6.x</span>
+            <span class="tag tag-orange">WooCommerce 9.x</span>
+            <span class="tag tag-orange">PHP / AJAX</span>
+            <span class="tag tag-orange">Yoast SEO</span>
+            <span class="tag tag-orange">UX Design</span>
+            <span class="tag tag-orange">Market Research</span>
+          </div>
+        </div>
+
+        <div class="prose-section">
+          <h2>Problem</h2>
+          <p>University students in Kampala — at Kyambogo, Makerere, and nearby institutions — spend significant time and money sourcing everyday essentials from busy markets like Kalerwe or roadside shops. The experience is fragmented, often overpriced for single items, and poorly matched to hostel realities: <strong>small rooms, shared spaces, limited budgets, and no transport.</strong></p>
+          <p>No existing e-commerce platform in Uganda was purpose-built for this customer. Jumia and Kikuu carry everything for everyone — nobody was serving this specific group.</p>
+        </div>
+
+        <div class="prose-section">
+          <h2>Solution</h2>
+          <p>A niche B2C platform offering products specifically curated for hostel living — from bedding and kitchenware to personal care, study essentials, and a bundled <strong>Hostel Starter Kit</strong> at 26% discount. Free delivery within Kampala. Cash on Delivery to reduce purchase friction.</p>
+        </div>
+
+        <div class="prose-section">
+          <h2>What I Did</h2>
+          <div class="two-col">
+            <div class="mini-card">
+              <div class="mini-card-label">Business Model</div>
+              <ul>
+                <li>Market sizing — 70,000+ target students</li>
+                <li>Revenue forecasting (UGX 5.25M–10.5M/month Year 1)</li>
+                <li>20–30% gross margin per product</li>
+                <li>Mobile Money integration roadmap (Year 2)</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-label">Website Development</div>
+              <ul>
+                <li>WordPress + WooCommerce setup</li>
+                <li>Custom PHP AJAX cart quantity controls</li>
+                <li>Live cart count in sticky navigation</li>
+                <li>Max Mega Menu — 9 categories, 20 subcategories</li>
+              </ul>
+            </div>
+          </div>
+          <div class="two-col" style="margin-top:16px;">
+            <div class="mini-card">
+              <div class="mini-card-label">UX Design</div>
+              <ul>
+                <li>Mobile-first for 3G connectivity</li>
+                <li>WP Super Cache + lazy loading</li>
+                <li>4-colour palette — WCAG compliant</li>
+                <li>Inline quantity controls on product cards</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-label">SEO Strategy</div>
+              <ul>
+                <li>Yoast SEO — meta descriptions for all 32 products</li>
+                <li>Keywords: hostel essentials Uganda, student toiletries Kampala</li>
+                <li>Student testimonials section for UGC signals</li>
+                <li>XML sitemap auto-generated</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="prose-section">
+          <h2>Screenshot</h2>
+          <div class="screenshot-slot">
+            <span style="font-size:24px;">📸</span>
+            <span>Add your HostelHub homepage screenshot here</span>
+          </div>
+        </div>
+
+        <div class="prose-section">
+          <h2>Features</h2>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <div class="f-icon">🛒</div>
+              <div class="f-title">Smart Shopping Cart</div>
+              <div class="f-desc">Inline +/− controls on product cards via custom PHP AJAX — no page reload needed</div>
+            </div>
+            <div class="feature-item">
+              <div class="f-icon">🔍</div>
+              <div class="f-title">Product Filtering</div>
+              <div class="f-desc">Category and price range filters — dynamic results without page reload</div>
+            </div>
+            <div class="feature-item">
+              <div class="f-icon">📱</div>
+              <div class="f-title">Mobile Optimised</div>
+              <div class="f-desc">Responsive 1–2–3 column grid, hamburger menu, under 3s load time on 3G</div>
+            </div>
+            <div class="feature-item">
+              <div class="f-icon">🏷️</div>
+              <div class="f-title">Student Discounts</div>
+              <div class="f-desc">5% discount with valid university ID email verification</div>
+            </div>
+            <div class="feature-item">
+              <div class="f-icon">📦</div>
+              <div class="f-title">Bundle Kit</div>
+              <div class="f-desc">Hostel Starter Kit — 7 essentials at 26% discount vs. buying individually</div>
+            </div>
+            <div class="feature-item">
+              <div class="f-icon">🔒</div>
+              <div class="f-title">Secure Checkout</div>
+              <div class="f-desc">Let's Encrypt SSL, Cash on Delivery, HTTPS enforced across all pages</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="prose-section">
+          <h2>Outcome</h2>
+          <div class="outcome-grid">
+            <div class="outcome-item">
+              <div class="o-label">Market Fit</div>
+              <div class="o-text">Purpose-built niche — no direct competitor in Uganda's student e-commerce space</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Scalable Concept</div>
+              <div class="o-text">Year 2 roadmap includes Mobile Money, 50+ SKUs, expansion to Mbale, Mbarara, Gulu</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Technical Quality</div>
+              <div class="o-text">All 22 Web Page Setting Guide requirements implemented and verified</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Performance</div>
+              <div class="o-text">Sub-3s load time on 3G via caching, compression, and lazy loading</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout callout-orange">
+          <span class="callout-icon">🎬</span>
+          Demo video coming soon — full walkthrough of cart, checkout, mobile view, and SEO setup
+        </div>
+
+      </main>
+
+      <aside class="content-sidebar" style="position:sticky; top:72px;">
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Tech Stack</div>
+          <ul>
+            <li>WordPress 6.x</li>
+            <li>WooCommerce 9.x</li>
+            <li>PHP / JavaScript</li>
+            <li>Astra Theme</li>
+            <li>Yoast SEO</li>
+            <li>WP Super Cache</li>
+            <li>Max Mega Menu</li>
+          </ul>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">Skills Demonstrated</div>
+          <ul>
+            <li>E-Commerce Development</li>
+            <li>Custom PHP/AJAX</li>
+            <li>UX Design</li>
+            <li>SEO Strategy</li>
+            <li>Business Modelling</li>
+            <li>Market Research</li>
+          </ul>
+        </div>
+        <a href="project-modeling.html" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:8px; display:flex;">Next Project →</a>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="footer-name">Noellyn Nakyembe</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+</body>
+</html>

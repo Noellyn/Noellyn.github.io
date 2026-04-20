@@ -1,133 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About — Noellyn Nakyembe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Noeline Nakyembe</title>
 <link rel="stylesheet" href="style.css">
 <style>
 .page-hero { background: var(--navy); padding: 64px 0; }
 .page-hero h1 { font-family: var(--serif); font-size: 40px; font-weight: 400; color: white; }
 .page-hero h1 em { font-style: italic; color: var(--blue-mid); }
+.page-hero p { font-size: 15px; color: rgba(255,255,255,0.45); margin-top: 12px; font-weight: 300; max-width: 560px; }
+
 .about-section { padding: 64px 0; border-bottom: 1px solid var(--border); }
 .about-grid { display: grid; grid-template-columns: 1fr 340px; gap: 64px; align-items: start; }
-.about-prose p { font-size: 15px; color: var(--text-muted); line-height: 1.9; margin-bottom: 20px; }
-.about-prose p strong { color: var(--text); font-weight: 500; }
+
 .about-prose h2 { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--navy); margin-bottom: 14px; margin-top: 36px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
 .about-prose h2:first-child { margin-top: 0; }
+.about-prose p { font-size: 15px; color: var(--text-muted); line-height: 1.9; margin-bottom: 16px; }
+.about-prose p strong { color: var(--text); font-weight: 500; }
 
-.skills-section { padding: 64px 0; }
-.skills-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.skill-group { }
-.skill-group-title { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 16px; }
+.strengths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+.strength-item { background: white; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; transition: all 0.2s; }
+.strength-item:hover { border-color: var(--blue-mid); background: var(--blue-light); }
+.strength-icon { font-size: 18px; margin-bottom: 8px; }
+.strength-title { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 4px; }
+.strength-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+.profile-card { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+.profile-card-top { background: var(--navy); padding: 28px; text-align: center; }
+.profile-avatar { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; color: white; margin: 0 auto 14px; overflow: hidden; }
+.profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.profile-name { font-family: var(--serif); font-size: 18px; color: white; margin-bottom: 4px; }
+.profile-title { font-size: 12px; color: rgba(255,255,255,0.45); }
+.profile-card-body { padding: 20px; }
+.profile-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+.profile-row:last-child { border-bottom: none; }
+.profile-row-label { color: var(--text-light); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.profile-row-value { color: var(--text-muted); text-align: right; }
+.status-available { color: var(--green); font-weight: 500; }
+
+.skills-section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+.skills-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.skill-group-title { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-light); margin-bottom: 20px; }
 .skill-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); }
 .skill-item:last-child { border-bottom: none; }
 .skill-name { font-size: 14px; color: var(--text); font-weight: 400; }
 .skill-bar { width: 80px; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
 .skill-fill { height: 100%; background: var(--navy); border-radius: 2px; }
 
-.profile-card { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-.profile-card-top { background: var(--navy); padding: 28px; text-align: center; }
-.profile-avatar { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; color: white; margin: 0 auto 14px; }
-.profile-name { font-family: var(--serif); font-size: 18px; color: white; margin-bottom: 4px; }
-.profile-title { font-size: 12px; color: rgba(255,255,255,0.45); }
-.profile-card-body { padding: 20px; }
-.profile-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
-.profile-row:last-child { border-bottom: none; }
-.profile-row-label { color: var(--text-light); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
-.profile-row-value { color: var(--text-muted); }
-
-.looking-for { padding: 56px 0; background: var(--surface); border-top: 1px solid var(--border); }
+.looking-for { padding: 64px 0; background: var(--surface); }
 .looking-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-.looking-item { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+.looking-item { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: all 0.2s; }
+.looking-item:hover { border-color: var(--blue-mid); }
 .looking-item-icon { font-size: 24px; margin-bottom: 12px; }
 .looking-item-title { font-size: 14px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
 .looking-item-desc { font-size: 13px; color: var(--text-muted); line-height: 1.65; }
 
-@media (max-width:720px) { .about-grid,.skills-two-col,.looking-grid { grid-template-columns: 1fr; } }
+@media (max-width: 720px) {
+  .about-grid, .skills-two-col, .looking-grid, .strengths-grid { grid-template-columns: 1fr; }
+  .about-grid { gap: 32px; }
+}
 </style>
 </head>
 <body>
+
 <nav class="site-nav">
-  <a href="index.html" class="nav-logo">Noellyn <span>Nakyembe</span></a>
-  <div class="nav-links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html" class="active">About</a><a href="contact.html">Contact</a></div>
+  <a href="index.html" class="nav-logo">Noeline <span>Nakyembe</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html" class="active">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
+
 <div class="page-hero">
   <div class="container">
     <div class="section-label" style="color:rgba(255,255,255,0.3);">About Me</div>
     <h1>The person <em>behind the work</em></h1>
+    <p>Information Systems postgraduate. Problem solver. Building solutions at the intersection of business and technology.</p>
   </div>
 </div>
+
+<!-- ABOUT -->
 <section class="about-section">
   <div class="container">
     <div class="about-grid">
       <div class="about-prose">
+
         <h2>Who I Am</h2>
-        <p>I am an Information Systems postgraduate at Uganda Technology and Management University (UTAMU), Kampala, with a strong interest in solving real-world problems using technology and data. My work sits at the intersection of business needs and technical systems.</p>
-        <h2>What I Am Good At</h2>
-        <p>I think in systems. Whether I am designing a database schema, analysing a business process, or building a platform from scratch, I approach problems by understanding the whole before fixing the parts.</p>
-        <p><strong>Systems thinking</strong> — I look for feedback loops, dependencies, and root causes rather than surface symptoms. <strong>Problem-solving</strong> — I have built a database system for a regulated financial institution, an e-commerce platform for a real market, and modelled complex systems using causal loop diagrams. <strong>Bridging business and IT</strong> — I speak both languages. I can gather requirements from non-technical stakeholders and translate them into structured technical solutions.</p>
+        <p>I am an Information Systems postgraduate with a strong focus on designing practical, <strong>data-driven solutions to real-world problems</strong>. My work sits at the intersection of business and technology — I analyse challenges, design systems, and develop structured solutions that improve efficiency and decision-making.</p>
+        <p>I have hands-on experience in database design, system modelling, and digital platform development. My projects include a <strong>microfinance database system</strong> for a Bank of Uganda-regulated institution and a <strong>student-focused e-commerce platform</strong> serving the Kampala university market — applying both technical and business thinking to deliver functional and scalable solutions.</p>
+
+        <h2>Core Strengths</h2>
+        <div class="strengths-grid">
+          <div class="strength-item">
+            <div class="strength-icon">⚙️</div>
+            <div class="strength-title">Systems Analysis & Design</div>
+            <div class="strength-desc">Translating business problems into structured technical requirements and system designs</div>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">🗄️</div>
+            <div class="strength-title">Database Modelling</div>
+            <div class="strength-desc">Relational database design in MySQL — ER modelling, normalization to 3NF, SQL querying</div>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">📋</div>
+            <div class="strength-title">Business Process Understanding</div>
+            <div class="strength-desc">Identifying inefficiencies, mapping processes, and designing solutions that reflect how organizations actually work</div>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">🔗</div>
+            <div class="strength-title">Bridging Business & Technology</div>
+            <div class="strength-desc">Speaking both languages — gathering requirements from non-technical stakeholders and turning them into working systems</div>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">🧩</div>
+            <div class="strength-title">Problem Solving & Critical Thinking</div>
+            <div class="strength-desc">Approaching problems systemically — looking for root causes, feedback loops, and leverage points rather than surface symptoms</div>
+          </div>
+          <div class="strength-item">
+            <div class="strength-icon">📊</div>
+            <div class="strength-title">Data Structuring & Reporting</div>
+            <div class="strength-desc">Designing data models and SQL views that support reporting and analytics without requiring SQL knowledge from end users</div>
+          </div>
+        </div>
+
         <h2>What I Am Looking For</h2>
-        <p>Entry-level roles in Business Analysis, Systems Analysis, or data-related fields in Kampala — at banks, telcos, NGOs, government agencies, or technology companies. I am particularly interested in organisations that use data to make real decisions.</p>
+        <p>I am seeking <strong>entry-level opportunities</strong> where I can contribute to solving real business problems while continuing to grow my skills in systems analysis, data, and technology. I am particularly interested in roles that involve systems analysis, business process improvement, and data-driven decision-making — at banks, telcos, NGOs, or technology companies in Kampala.</p>
+
       </div>
+
       <div>
         <div class="profile-card">
           <div class="profile-card-top">
             <div class="profile-avatar">NN</div>
-            <div class="profile-name">Noellyn Nakyembe</div>
-            <div class="profile-title">Business &amp; Systems Analyst</div>
+            <div class="profile-name">Noeline Nakyembe</div>
+            <div class="profile-title">Business & Systems Analyst</div>
           </div>
           <div class="profile-card-body">
-            <div class="profile-row"><span class="profile-row-label">Programme</span><span class="profile-row-value">PGD Information Systems</span></div>
-            <div class="profile-row"><span class="profile-row-label">University</span><span class="profile-row-value">UTAMU</span></div>
-            <div class="profile-row"><span class="profile-row-label">Location</span><span class="profile-row-value">Kampala, Uganda</span></div>
-            <div class="profile-row"><span class="profile-row-label">Available</span><span class="profile-row-value">May 2026</span></div>
-            <div class="profile-row"><span class="profile-row-label">Status</span><span class="profile-row-value" style="color:var(--green); font-weight:500;">Open to opportunities</span></div>
+            <div class="profile-row">
+              <span class="profile-row-label">Programme</span>
+              <span class="profile-row-value">PGD Information Systems</span>
+            </div>
+            <div class="profile-row">
+              <span class="profile-row-label">University</span>
+              <span class="profile-row-value">UTAMU</span>
+            </div>
+            <div class="profile-row">
+              <span class="profile-row-label">Location</span>
+              <span class="profile-row-value">Kampala, Uganda</span>
+            </div>
+            <div class="profile-row">
+              <span class="profile-row-label">Available</span>
+              <span class="profile-row-value">May 2026</span>
+            </div>
+            <div class="profile-row">
+              <span class="profile-row-label">Status</span>
+              <span class="profile-row-value status-available">Open to opportunities</span>
+            </div>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
+<!-- SKILLS -->
 <section class="skills-section">
   <div class="container">
     <div class="section-label">Skills</div>
     <div class="section-title" style="margin-bottom:32px;">Technical &amp; <em>core competencies</em></div>
     <div class="skills-two-col">
-      <div class="skill-group">
+      <div>
         <div class="skill-group-title">Technical Skills</div>
         <div class="skill-item"><span class="skill-name">SQL / MySQL</span><div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div></div>
         <div class="skill-item"><span class="skill-name">WordPress / WooCommerce</span><div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div></div>
         <div class="skill-item"><span class="skill-name">PHP / JavaScript</span><div class="skill-bar"><div class="skill-fill" style="width:70%;"></div></div></div>
-        <div class="skill-item"><span class="skill-name">STELLA Modelling</span><div class="skill-bar"><div class="skill-fill" style="width:75%;"></div></div></div>
+        <div class="skill-item"><span class="skill-name">STELLA / Visual Paradigm</span><div class="skill-bar"><div class="skill-fill" style="width:75%;"></div></div></div>
         <div class="skill-item"><span class="skill-name">Microsoft Excel</span><div class="skill-bar"><div class="skill-fill" style="width:80%;"></div></div></div>
         <div class="skill-item"><span class="skill-name">HTML / CSS</span><div class="skill-bar"><div class="skill-fill" style="width:75%;"></div></div></div>
       </div>
-      <div class="skill-group">
+      <div>
         <div class="skill-group-title">Core Competencies</div>
         <div class="skill-item"><span class="skill-name">Systems Analysis</span><div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Data Modelling</span><div class="skill-bar"><div class="skill-fill" style="width:88%;"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Process Design</span><div class="skill-bar"><div class="skill-fill" style="width:82%;"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Database Modelling</span><div class="skill-bar"><div class="skill-fill" style="width:88%;"></div></div></div>
         <div class="skill-item"><span class="skill-name">Requirements Analysis</span><div class="skill-bar"><div class="skill-fill" style="width:85%;"></div></div></div>
-        <div class="skill-item"><span class="skill-name">Problem Solving</span><div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Process Design</span><div class="skill-bar"><div class="skill-fill" style="width:82%;"></div></div></div>
         <div class="skill-item"><span class="skill-name">ER Diagram Design</span><div class="skill-bar"><div class="skill-fill" style="width:88%;"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Problem Solving</span><div class="skill-bar"><div class="skill-fill" style="width:90%;"></div></div></div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- LOOKING FOR -->
 <section class="looking-for">
   <div class="container">
     <div class="section-label">Target Roles</div>
     <div class="section-title" style="margin-bottom:28px;">What I am <em>looking for</em></div>
     <div class="looking-grid">
-      <div class="looking-item"><div class="looking-item-icon">📋</div><div class="looking-item-title">Business Analyst</div><div class="looking-item-desc">Requirements gathering, process documentation, bridging stakeholders and technical teams.</div></div>
-      <div class="looking-item"><div class="looking-item-icon">⚙️</div><div class="looking-item-title">Systems Analyst</div><div class="looking-item-desc">System design, ER modelling, database analysis, and translating business needs into technical specs.</div></div>
-      <div class="looking-item"><div class="looking-item-icon">🗄️</div><div class="looking-item-title">Data / IT Officer</div><div class="looking-item-desc">Database management, data integrity, reporting, and IT operations at banks, NGOs, or telcos.</div></div>
+      <div class="looking-item">
+        <div class="looking-item-icon">📋</div>
+        <div class="looking-item-title">Business Analyst</div>
+        <div class="looking-item-desc">Requirements gathering, process documentation, translating business needs into technical specifications, and bridging stakeholders and development teams.</div>
+      </div>
+      <div class="looking-item">
+        <div class="looking-item-icon">⚙️</div>
+        <div class="looking-item-title">Systems Analyst</div>
+        <div class="looking-item-desc">System design, ER modelling, database analysis, and converting business requirements into structured technical solutions that work in practice.</div>
+      </div>
+      <div class="looking-item">
+        <div class="looking-item-icon">🗄️</div>
+        <div class="looking-item-title">Data / IT Officer</div>
+        <div class="looking-item-desc">Database management, data integrity, reporting, and IT operations at banks, NGOs, telcos, or government agencies in Kampala.</div>
+      </div>
     </div>
   </div>
 </section>
+
 <footer>
-  <span class="footer-name">Noellyn Nakyembe</span>
-  <div class="footer-links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <span class="footer-name">Noeline Nakyembe</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </footer>
+
 </body>
 </html>

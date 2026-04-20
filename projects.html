@@ -1,85 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Noellyn Nakyembe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Noeline Nakyembe</title>
 <link rel="stylesheet" href="style.css">
 <style>
 .page-hero { background: var(--surface); border-bottom: 1px solid var(--border); padding: 56px 0; }
 .page-hero h1 { font-family: var(--serif); font-size: 40px; font-weight: 400; color: var(--navy); }
 .page-hero h1 em { font-style: italic; color: var(--blue); }
-.page-hero p { font-size: 15px; color: var(--text-muted); margin-top: 12px; }
+.page-hero p { font-size: 15px; color: var(--text-muted); margin-top: 12px; max-width: 560px; line-height: 1.7; }
+
 .projects-list { padding: 56px 0; }
-.project-row { display: grid; grid-template-columns: 200px 1fr; gap: 0; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; margin-bottom: 20px; text-decoration: none; background: white; transition: all 0.2s; }
+
+.project-row {
+  display: grid; grid-template-columns: 220px 1fr;
+  border: 1px solid var(--border); border-radius: 14px;
+  overflow: hidden; margin-bottom: 20px;
+  text-decoration: none; background: white;
+  transition: all 0.2s;
+}
 .project-row:hover { border-color: var(--blue-mid); transform: translateY(-2px); }
+
 .project-row-left { padding: 28px 24px; display: flex; flex-direction: column; justify-content: space-between; }
 .pr-left-navy  { background: var(--navy); }
 .pr-left-green { background: #052e16; }
 .pr-left-blue  { background: #172554; }
+
 .pr-num { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; }
 .pr-num-orange { color: var(--orange); }
 .pr-num-green  { color: #4ade80; }
 .pr-num-blue   { color: #93c5fd; }
 .pr-title { font-family: var(--serif); font-size: 19px; font-weight: 400; color: white; line-height: 1.2; margin-top: 8px; }
+
 .project-row-right { padding: 28px 32px; }
-.pr-tags { margin-bottom: 12px; }
-.pr-desc { font-size: 14px; color: var(--text-muted); line-height: 1.75; margin-bottom: 16px; }
+
+.pr-overview { font-size: 13px; font-weight: 500; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+.pr-tagline { font-size: 15px; color: var(--navy); font-weight: 400; margin-bottom: 16px; line-height: 1.4; }
+
+.pr-what { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.pr-what-col { }
+.pr-what-label { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
+.pr-what-list { list-style: none; }
+.pr-what-list li { font-size: 12px; color: var(--text-muted); padding: 3px 0; display: flex; gap: 6px; line-height: 1.4; }
+.pr-what-list li::before { content: '–'; color: var(--text-light); flex-shrink: 0; font-size: 11px; margin-top: 2px; }
+
+.pr-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--border); }
 .pr-link { font-size: 13px; font-weight: 500; color: var(--blue); }
-@media (max-width:680px) { .project-row { grid-template-columns: 1fr; } .project-row-left { flex-direction: row; align-items: center; padding: 16px 20px; } }
+.pr-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
+@media (max-width: 680px) {
+  .project-row { grid-template-columns: 1fr; }
+  .project-row-left { padding: 16px 20px; }
+  .pr-what { grid-template-columns: 1fr; gap: 8px; }
+}
 </style>
 </head>
 <body>
+
 <nav class="site-nav">
-  <a href="index.html" class="nav-logo">Noellyn <span>Nakyembe</span></a>
-  <div class="nav-links"><a href="index.html">Home</a><a href="projects.html" class="active">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <a href="index.html" class="nav-logo">Noeline <span>Nakyembe</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
+
 <div class="page-hero">
   <div class="container">
     <div class="section-label">Portfolio</div>
     <h1>Work I have <em>built</em></h1>
-    <p>Three projects covering database design, e-commerce development, and systems modelling.</p>
+    <p>A selection of projects demonstrating my ability to analyse problems, design systems, and deliver practical, data-driven solutions.</p>
   </div>
 </div>
+
 <section class="projects-list">
   <div class="container">
+
+    <!-- PROJECT 1 -->
     <a href="project-microfinance.html" class="project-row">
       <div class="project-row-left pr-left-green">
         <span class="pr-num pr-num-green">Project 01</span>
         <div class="pr-title">Microfinance Database System</div>
       </div>
       <div class="project-row-right">
-        <div class="pr-tags tag-row"><span class="tag tag-green">MySQL</span><span class="tag tag-green">3NF Normalization</span><span class="tag tag-green">RBAC</span><span class="tag tag-green">PHP</span><span class="tag tag-green">Bank of Uganda Compliant</span></div>
-        <p class="pr-desc">Centralised relational database for ABC Microfinance Uganda Ltd — a Bank of Uganda-regulated Tier 3 MDI serving 12,000+ clients across three offices. Replaced Excel spreadsheets with a 6-table MySQL schema normalised to 3NF, role-based access control for 34 staff, and a PHP web application.</p>
-        <span class="pr-link">View project →</span>
+        <div class="pr-overview">Database Design & Application Development</div>
+        <div class="pr-tagline">Designing a structured data system to replace inefficient manual operations for a Bank of Uganda-regulated institution</div>
+        <div class="pr-what">
+          <div class="pr-what-col">
+            <div class="pr-what-label">What I Did</div>
+            <ul class="pr-what-list">
+              <li>Designed normalised database schema (3NF)</li>
+              <li>Built ER diagram — 6 entities, 9 relationships</li>
+              <li>Implemented role-based access control (4 roles)</li>
+              <li>Built PHP web application — 6 CRUD screens</li>
+              <li>Wrote JOINs, aggregates, subqueries, and 4 views</li>
+            </ul>
+          </div>
+          <div class="pr-what-col">
+            <div class="pr-what-label">Impact</div>
+            <ul class="pr-what-list">
+              <li>One source of truth across 3 offices, 34 staff</li>
+              <li>Loan approvals no longer require document transfer</li>
+              <li>Role-based access replaces open Excel files</li>
+              <li>Bank of Uganda 7-year audit compliance via soft delete</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pr-bottom">
+          <div class="pr-tags">
+            <span class="tag tag-green">MySQL</span>
+            <span class="tag tag-green">3NF Normalization</span>
+            <span class="tag tag-green">PHP / Apache</span>
+            <span class="tag tag-green">RBAC</span>
+          </div>
+          <span class="pr-link">View case study →</span>
+        </div>
       </div>
     </a>
+
+    <!-- PROJECT 2 -->
     <a href="project-hostelhub.html" class="project-row">
       <div class="project-row-left pr-left-navy">
         <span class="pr-num pr-num-orange">Project 02</span>
         <div class="pr-title">HostelHub Essentials</div>
       </div>
       <div class="project-row-right">
-        <div class="pr-tags tag-row"><span class="tag tag-orange">WordPress</span><span class="tag tag-orange">WooCommerce</span><span class="tag tag-orange">PHP/AJAX</span><span class="tag tag-orange">Yoast SEO</span><span class="tag tag-orange">UX Design</span></div>
-        <p class="pr-desc">Student-focused B2C e-commerce platform built for university hostel residents in Kampala. 32 curated products across 9 categories, custom PHP AJAX cart controls, mobile-first design for 3G users, and a full business model including revenue forecasting and competitive analysis.</p>
-        <span class="pr-link">View project →</span>
+        <div class="pr-overview">E-Commerce Platform Development</div>
+        <div class="pr-tagline">Building a student-focused digital platform for accessing everyday essentials — combining business strategy with technical implementation</div>
+        <div class="pr-what">
+          <div class="pr-what-col">
+            <div class="pr-what-label">What I Did</div>
+            <ul class="pr-what-list">
+              <li>Defined business model and target market (70,000+ students)</li>
+              <li>Built site on WordPress + WooCommerce — 32 products live</li>
+              <li>Custom PHP AJAX cart quantity controls</li>
+              <li>Mobile-first UX optimised for 3G connectivity</li>
+              <li>SEO architecture via Yoast — meta descriptions for all 32 products</li>
+            </ul>
+          </div>
+          <div class="pr-what-col">
+            <div class="pr-what-label">Impact</div>
+            <ul class="pr-what-list">
+              <li>Purpose-built niche — no direct competitor in Uganda</li>
+              <li>Sub-3s load time on 3G mobile connections</li>
+              <li>All 22 web compliance requirements verified</li>
+              <li>Scalable to Mobile Money and geographic expansion</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pr-bottom">
+          <div class="pr-tags">
+            <span class="tag tag-orange">WordPress</span>
+            <span class="tag tag-orange">WooCommerce</span>
+            <span class="tag tag-orange">PHP / AJAX</span>
+            <span class="tag tag-orange">Yoast SEO</span>
+          </div>
+          <span class="pr-link">View case study →</span>
+        </div>
       </div>
     </a>
+
+    <!-- PROJECT 3 -->
     <a href="project-modeling.html" class="project-row">
       <div class="project-row-left pr-left-blue">
         <span class="pr-num pr-num-blue">Project 03</span>
         <div class="pr-title">System Dynamics Modelling</div>
       </div>
       <div class="project-row-right">
-        <div class="pr-tags tag-row"><span class="tag tag-blue">STELLA</span><span class="tag tag-blue">Causal Loop Diagrams</span><span class="tag tag-blue">Systems Thinking</span></div>
-        <p class="pr-desc">System dynamics modelling using causal loop diagrams to identify feedback loops, analyse system behaviour, and support decision-making. Built in STELLA with explicit attention to reinforcing and balancing loops.</p>
-        <span class="pr-link">View project →</span>
+        <div class="pr-overview">Systems Thinking & Simulation</div>
+        <div class="pr-tagline">Using system dynamics to model the UTAMU student enrollment system and simulate the impact of policy interventions over 10 years</div>
+        <div class="pr-what">
+          <div class="pr-what-col">
+            <div class="pr-what-label">What I Did</div>
+            <ul class="pr-what-list">
+              <li>Identified 3 feedback loops — R1 Reputation Growth, B1 Capacity Constraint, B2 Dropout Reputation</li>
+              <li>Built causal loop diagram in Visual Paradigm</li>
+              <li>Built stock and flow model in STELLA</li>
+              <li>Ran Base, Scenario A, and Scenario B simulations</li>
+            </ul>
+          </div>
+          <div class="pr-what-col">
+            <div class="pr-what-label">Impact</div>
+            <ul class="pr-what-list">
+              <li>Scenario A (retention) outperforms Scenario B (capacity) — 200 more enrolled students over 10 years</li>
+              <li>Dropout reduction identified as the higher-leverage policy intervention</li>
+              <li>Quantitative basis for recommending student support over infrastructure investment</li>
+            </ul>
+          </div>
+        </div>
+        <div class="pr-bottom">
+          <div class="pr-tags">
+            <span class="tag tag-blue">STELLA</span>
+            <span class="tag tag-blue">Visual Paradigm</span>
+            <span class="tag tag-blue">Causal Loop Diagrams</span>
+          </div>
+          <span class="pr-link">View case study →</span>
+        </div>
       </div>
     </a>
+
   </div>
 </section>
+
 <footer>
-  <span class="footer-name">Noellyn Nakyembe</span>
-  <div class="footer-links"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <span class="footer-name">Noeline Nakyembe</span>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </footer>
+
 </body>
 </html>

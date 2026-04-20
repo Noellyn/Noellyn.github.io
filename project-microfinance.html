@@ -102,7 +102,7 @@
 <body>
 
 <nav class="site-nav">
-  <a href="index.html" class="nav-logo">Noellyn <span>Nakyembe</span></a>
+  <a href="index.html" class="nav-logo">Noeline <span>Nakyembe</span></a>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="projects.html" class="active">Projects</a>
@@ -116,7 +116,7 @@
   <div class="container">
     <div class="breadcrumb"><a href="projects.html">Projects</a> › Microfinance Database System</div>
     <h1>Microfinance <em>Database System</em></h1>
-    <div class="project-hero-sub">ABC Microfinance Uganda Ltd — centralised MySQL database replacing Excel across 3 offices, Bank of Uganda compliant</div>
+    <div class="project-hero-sub">ABC Microfinance Uganda Ltd — centralized MySQL database replacing Excel across 3 offices, Bank of Uganda compliant</div>
     <div class="project-meta">
       <div class="meta-item"><div class="meta-label">Stack</div><div class="meta-value">MySQL 8.0 · PHP · Apache · HTML/CSS</div></div>
       <div class="meta-item"><div class="meta-label">Type</div><div class="meta-value">Database Design &amp; Application Development</div></div>
@@ -134,8 +134,8 @@
         <!-- OVERVIEW -->
         <div class="prose-section">
           <h2>Overview</h2>
-          <p>ABC Microfinance Uganda Ltd is a <strong>Tier 3 Microfinance Deposit-taking Institution (MDI)</strong> licensed and regulated by the Bank of Uganda under the Microfinance Deposit-taking Institutions Act. The organisation serves over 12,000 registered clients across three offices in Kampala, Jinja, and Mbarara with a staff of 34.</p>
-          <p>This project designed and implemented a centralised relational database system in MySQL — normalised to Third Normal Form — to replace a fragmented Excel-based records system. A PHP web application provides full CRUD operations for all staff roles without requiring SQL knowledge.</p>
+          <p>Microfinance institutions often rely on fragmented tools like spreadsheets to manage critical operations — member records, loans, and transactions. This creates data duplication, security gaps, and operational inefficiency that directly affect service delivery to clients.</p>
+          <p>This project involved designing and implementing a <strong>structured, secure, and scalable database system</strong> for ABC Microfinance Uganda Ltd — a Tier 3 MDI licensed by the Bank of Uganda serving over 12,000 clients across three offices in Kampala, Jinja, and Mbarara.</p>
           <div class="tag-row" style="margin-top:16px;">
             <span class="tag tag-green">MySQL 8.0</span>
             <span class="tag tag-green">PHP / Apache</span>
@@ -146,10 +146,40 @@
           </div>
         </div>
 
+        <!-- MY ROLE -->
+        <div class="prose-section">
+          <h2>My Role</h2>
+          <p>I independently designed and built the entire system — from requirements analysis through to a working web application.</p>
+          <div class="two-col">
+            <div class="mini-card">
+              <div class="mini-card-label">What I Designed</div>
+              <ul>
+                <li>Database architecture and 6-table schema</li>
+                <li>Entity-Relationship diagram with 9 relationships</li>
+                <li>Data normalization from flat Excel to 3NF</li>
+                <li>Role-based access control — 4 user roles</li>
+                <li>Query logic including JOINs, views, and subqueries</li>
+                <li>Network architecture for multi-branch WAN deployment</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-label">What I Built</div>
+              <ul>
+                <li>MySQL database — all tables, constraints, and sample data</li>
+                <li>PHP/Apache three-tier web application</li>
+                <li>6 CRUD screens for all staff roles</li>
+                <li>Dashboard with live KPI cards and charts</li>
+                <li>4 SQL views for daily branch reporting</li>
+                <li>GRANT statements implementing least-privilege access</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <!-- PROBLEM -->
         <div class="prose-section">
-          <h2>Problem</h2>
-          <p>The organisation managed all client records, loan portfolios, and transaction histories using Microsoft Excel spreadsheets and paper forms — with <strong>no shared database or network connection between branches</strong>. Staff transferred data manually via USB drives, WhatsApp messages, and email attachments.</p>
+          <h2>The Problem</h2>
+          <p>The organization managed all client records, loan portfolios, and transaction histories using Microsoft Excel spreadsheets and paper forms — with <strong>no shared database or network connection between branches</strong>. Staff transferred data manually via USB drives, WhatsApp messages, and email attachments.</p>
           <div class="problem-grid">
             <div class="problem-item">
               <div class="p-label">Data Duplication</div>
@@ -234,7 +264,7 @@
         <!-- NORMALIZATION -->
         <div class="prose-section">
           <h2>Normalization — Excel to 3NF</h2>
-          <p>The starting point was the organisation's flat Excel spreadsheet where member details, branch information, account balances, and loan data were all combined in a single sheet. The schema was normalised through three normal forms.</p>
+          <p>The starting point was the organization's flat Excel spreadsheet where member details, branch information, account balances, and loan data were all combined in a single sheet. The schema was normalised through three normal forms.</p>
           <div class="normalization-steps">
             <div class="norm-step">
               <div class="norm-badge norm-badge-1nf">1NF</div>
@@ -363,25 +393,71 @@
           </div>
         </div>
 
-        <!-- OUTCOME -->
+        <!-- IMPACT -->
         <div class="prose-section">
-          <h2>Outcome</h2>
+          <h2>Impact</h2>
           <div class="outcome-grid">
             <div class="outcome-item">
-              <div class="o-label">Data Integrity</div>
+              <div class="o-label">Improved Data Accuracy</div>
               <div class="o-text">3NF eliminates duplication — one source of truth for all 12,000+ client records accessible from all three offices simultaneously</div>
             </div>
             <div class="outcome-item">
-              <div class="o-label">Processing Speed</div>
-              <div class="o-text">Loan approvals no longer require physical document transfer — branch managers approve from the dashboard, tellers disburse immediately</div>
+              <div class="o-label">Operational Efficiency</div>
+              <div class="o-text">Loan approvals no longer require physical document transfer between offices — branch managers approve from the dashboard, tellers disburse immediately</div>
             </div>
             <div class="outcome-item">
-              <div class="o-label">Security</div>
-              <div class="o-text">Role-based GRANT statements replace open Excel files — each staff member accesses only what their role requires, Bank of Uganda compliant</div>
+              <div class="o-label">Enhanced Security</div>
+              <div class="o-text">Role-based GRANT statements replace open Excel files — controlled access and full auditability, aligned with Bank of Uganda requirements</div>
             </div>
             <div class="outcome-item">
-              <div class="o-label">Audit Compliance</div>
-              <div class="o-text">Soft deletion with IsActive flag, DeletedAt timestamp, and DeletedBy FK retains all records for the 7-year regulatory retention requirement</div>
+              <div class="o-label">Better Decision-Making</div>
+              <div class="o-text">Four SQL views and a live dashboard give branch managers consolidated financial data across all branches without writing a single query</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WHAT I LEARNED -->
+        <div class="prose-section">
+          <h2>What I Learned</h2>
+          <div class="two-col">
+            <div class="mini-card">
+              <div class="mini-card-label">Technical</div>
+              <ul>
+                <li>How to translate real-world business workflows into relational schema — the Loan table's dual Staff FKs came directly from understanding how microfinance approval works</li>
+                <li>Balancing data integrity with query performance — 3NF eliminates redundancy but requires JOINs; views abstract this for non-technical staff</li>
+                <li>Applying security at the database level, not just the application level — GRANT statements are more reliable than PHP-only access control</li>
+              </ul>
+            </div>
+            <div class="mini-card">
+              <div class="mini-card-label">Professional</div>
+              <ul>
+                <li>Requirements analysis matters more than the code — understanding what a Teller vs a Loan Officer actually does shaped every design decision</li>
+                <li>Regulatory context changes design — the Bank of Uganda's 7-year retention requirement is why soft delete exists instead of hard delete</li>
+                <li>Documentation is part of the deliverable — a system no one can maintain or extend is not finished</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEXT STEPS -->
+        <div class="prose-section">
+          <h2>Next Steps</h2>
+          <div class="outcome-grid">
+            <div class="outcome-item">
+              <div class="o-label">Mobile Money Integration</div>
+              <div class="o-text">Connect loan disbursements and repayments to MTN MoMo and Airtel Money APIs — reflecting how most clients actually transact</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Reporting Dashboards</div>
+              <div class="o-text">Connect the MySQL views to Power BI or Metabase for visual branch performance reports without requiring SQL knowledge from managers</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Live Multi-Branch Deployment</div>
+              <div class="o-text">Deploy on a cloud server (AWS RDS or DigitalOcean) with SSL certificates and a production-grade backup strategy</div>
+            </div>
+            <div class="outcome-item">
+              <div class="o-label">Group Lending Module</div>
+              <div class="o-text">Extend the schema to support VSLA and group loan products — common in Ugandan microfinance but not yet modelled</div>
             </div>
           </div>
         </div>
